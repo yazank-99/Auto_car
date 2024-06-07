@@ -1,0 +1,93 @@
+﻿@model IEnumerable<project.ViewModels.RentModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <li class="breadcrumb-item">Rent</li>
+        </ol>
+    </nav>
+</div>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                 @*   <h5 class="card-title d-flex justify-content-end">
+                        <a asp-action="Create" class="btn btn-primary">Create New +</a>
+                    </h5>*@
+                    <table class="table datatable index-table text-break">
+                        <thead>
+                            <tr class="bg-danger text-white">
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RentId)
+                                </th>
+                                <th>
+                                    User @Html.DisplayNameFor(model => model.AppUser.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Car)
+                                </th>
+                                <th class="w-10">
+                                    @Html.DisplayNameFor(model => model.RentDate)
+                                </th>
+                                <th class="text-center">
+                                    Operations
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-dark-light">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="align-middle">
+                                        @Html.DisplayFor(modelItem => item.RentId)
+                                    </td>
+                                    <td class="align-middle">
+                                        @Html.DisplayFor(modelItem => item.AppUser.Email)
+                                    </td>
+                                    <td class="align-middle">
+                                        @{
+                                            string car = item.Car.CarId + " " + item.Car.CarBrand + item.Car.CarTypeModel;
+                                        }
+                                        @Html.DisplayFor(modelItem => car)
+                                    </td>
+                                    <td class="align-middle w-10">
+                                        @Html.DisplayFor(modelItem => item.RentDate)
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       @* <a asp-action="Edit" asp-route-id="@item.RentId">
+                                            <i class="bx bxs-edit text-secondary h5"></i>
+                                        </a>*@
+                                        <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal" id="btn-delete"
+                                           data-path="@Url.ActionLink("Delete","Rent",new {id= item.RentId})">
+                                            <i class="bx bxs-trash text-danger h5"></i>
+                                        </a>
+                                       @* @if (item.IsActive)
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.RentId">
+                                                <i class="ri-eye-fill text-success h5"></i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.RentId">
+                                                <i class="ri-eye-close-fill text-danger h5"></i>
+                                            </a>
+                                        }*@
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

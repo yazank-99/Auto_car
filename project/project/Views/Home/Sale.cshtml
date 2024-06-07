@@ -1,0 +1,109 @@
+﻿@model project.ViewModels.HomeModel
+@{
+    Layout = "_layout";
+}
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option set-bg" data-setbg="../assets/img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Car Listing</h2>
+                    <div class="breadcrumb__links">
+                        <a asp-action="index" asp-controller="home"><i class="fa fa-home"></i> Home</a>
+                        <span>About</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Car Section Begin -->
+<section class="car spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="car__sidebar">
+                    <div class="car__search">
+                        <h5>Car Search</h5>
+                        <form action="#">
+                            <input type="text" placeholder="Search...">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="car__filter">
+                        <h5>Car Filter</h5>
+                        <form action="#">
+                            <select>
+                                <option data-display="Brand">Select Brand</option>
+                                <option value="">Acura</option>
+                                <option value="">Audi</option>
+                                <option value="">Bentley</option>
+                                <
+                                <option value="">BMW</option>
+                                <option value="">Bugatti</option>
+                            </select>
+                            <select>
+                                <option data-display="Model">Select Model</option>
+                                <option value="">Q3</option>
+                                <option value="">A4 </option>
+                                <option value="">AVENTADOR</option>
+                            </select>
+                            <select>
+                                <option value="">Colors</option>
+                                <option value="">Red</option>
+                                <option value="">Blue</option>
+                                <option value="">Black</option>
+                                <option value="">Yellow</option>
+                            </select>
+                            <div class="car__filter__btn">
+                                <button type="submit" class="site-btn">Reset FIlter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="car__filter__option">
+                    <div class="row">
+                        <div style="padding-left: 320px;">
+                            <h3 style="font-weight: 700;">These cars are for sale</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach (var item in Model.ListCar)
+                    {
+                        <div class="col-lg-4 col-md-4 sale">
+                            <div class="car__item">
+                                <div class="car__item__pic__slider owl-carousel">
+                                    <img src="~/images/addcar//@item.CarImgUrl1" />
+                                    <img src="~/images/addcar/@item.CarImgUrl2" />
+                                    <img src="~/images/addcar/@item.CarImgUrl3" />
+                                </div>
+                                <div class="car__item__text">
+                                    <div class="car__item__text__inner">
+                                        <div class="label-date">@item.CarManufacturingyear</div>
+                                        <h5><a href="#">@item.CarTypeModel</a></h5>
+                                        <ul>
+                                            <li><span>@item.CarWalking</span> mi</li>
+                                            <li>@item.CarGear</li>
+                                        </ul>
+                                    </div>
+                                    <div class="car__item__price">
+                                        <a href="/home/sale/@item.CarId"><span class="car-option sale">For Sale</span></a>
+                                        <h6>@item.CarPrice<span>/Month</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    
+                 </div>  
+        </div>
+        </div>
+</div>
+</section>
+<!-- Car Section End -->

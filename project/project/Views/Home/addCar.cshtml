@@ -1,0 +1,95 @@
+﻿@model project.ViewModels.HomeModel
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/addcar.css" rel="stylesheet" />
+
+    <title>Add Car</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="login-box">
+            <form asp-action="addCar" enctype="multipart/form-data">
+                <p>Car Information</p>
+                <div class="user-box">
+                    <input asp-for="Car.UploadImage">
+                    <input asp-for="Car.UploadImage2">
+                    <input asp-for="Car.UploadImage3">
+                </div>
+                <div class="user-box">
+                    <input asp-for="Car.CarBrand">
+                    <label>Brand</label>
+                    <span asp-validation-for="Car.CarBrand" class="text-danger"></span>
+                </div>
+                <div class="user-box">
+                    <input asp-for="Car.CarTypeModel">
+                    <label>Model</label>
+                    <span asp-validation-for="Car.CarTypeModel" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="user-box">
+                            <input asp-for="Car.CarGear">
+                            <label>Gear</label>
+                            <span asp-validation-for="Car.CarGear" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="user-box">
+                            <input asp-for="Car.CarPrice">
+                            <label>Price</label>
+                            <span asp-validation-for="Car.CarPrice" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="user-box">
+                            <input asp-for="Car.CarWalking">
+                            <label>Walking</label>
+                            <span asp-validation-for="Car.CarWalking" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="user-box">
+                            <input asp-for="Car.CarManufacturingyear">
+                            <label>Manufacturing Year</label>
+                            <span asp-validation-for="Car.CarManufacturingyear" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-box">
+                    <input type="color" asp-for="Car.CarColor">
+                    <label>color</label>
+                    <span asp-validation-for="Car.CarColor" class="text-danger"></span>
+                </div>
+                <div>
+                    <label style="color: white;" for="cars">Choose An Action :</label>
+                    <select asp-for="Car.RentOrSale" style="width: 40%;" id="cars">
+                        <option value="1">Sale</option>
+                        <option value="2">Rent</option>
+                    </select>
+                </div>
+                <div class="row mb-3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </div>
+                <button type="submit" class="btn btn">Save</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

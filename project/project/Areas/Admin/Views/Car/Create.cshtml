@@ -1,0 +1,150 @@
+﻿@model project.ViewModels.CarModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Car">Car</a></li>
+            <li class="breadcrumb-item active">Create</li>
+        </ol>
+    </nav>
+</div>
+<h4>Sale</h4>
+<hr />
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <input asp-for="CarId" type="hidden" readonly class="form-control" />
+                        <div class="row mb-3 d-flex justify-content-center">
+                            <div class="col-sm-2 text-center">
+                                <label asp-for="UploadImage" class="col-sm-12 text-center col-form-label">
+                                    <img id="image" src="~/Admin/assets/img/not-found.svg" class="img img-fluid border border-2 border-dark rounded-3 p-5" width="300" />
+                                </label>
+                                <input asp-for="UploadImage" hidden onchange="loadFile(event,'#image')" class="form-control" />
+                            </div>
+                            <div class="col-sm-2 text-center">
+                                <label asp-for="UploadImage2" class="col-sm-12 text-center col-form-label">
+                                    <img id="image2" src="~/Admin/assets/img/not-found.svg" class="img img-fluid border border-2 border-dark rounded-3 p-5" width="300" />
+                                </label>
+                                <input asp-for="UploadImage2" hidden onchange="loadFile(event,'#image2')" class="form-control" />
+                            </div>
+                            <div class="col-sm-2 text-center">
+                                <label asp-for="UploadImage3" class="col-sm-12 text-center col-form-label">
+                                    <img id="image3" src="~/Admin/assets/img/not-found.svg" class="img img-fluid border border-2 border-dark rounded-3 p-5" width="300" />
+                                </label>
+                                <input asp-for="UploadImage3" hidden onchange="loadFile(event,'#image3')" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mb-3  d-flex justify-content-center">
+                            <label asp-for="UploadImage" class="col-sm-2 text-center col-form-label"></label>
+                            <label asp-for="UploadImage2" class="col-sm-2 text-center col-form-label"></label>
+                            <label asp-for="UploadImage3" class="col-sm-2 text-center col-form-label"></label>
+
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="CarBrand" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <input asp-for="CarBrand" class="form-control" />
+                                        <span asp-validation-for="CarBrand" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="CarTypeModel" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <input asp-for="CarTypeModel" class="form-control" />
+                                        <span asp-validation-for="CarTypeModel" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="CarGear" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <input asp-for="CarGear" class="form-control" />
+                                        <span asp-validation-for="CarGear" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="CarPrice" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <input asp-for="CarPrice" class="form-control" />
+                                        <span asp-validation-for="CarPrice" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="CarWalking" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <input asp-for="CarWalking" class="form-control" />
+                                        <span asp-validation-for="CarWalking" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="CarColor" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <input type="color" asp-for="CarColor" class="form-control" />
+                                        <span asp-validation-for="CarColor" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="CarManufacturingyear" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <input asp-for="CarManufacturingyear" class="form-control" />
+                                        <span asp-validation-for="CarManufacturingyear" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row mb-3">
+                                    <label asp-for="RentOrSale" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <select asp-for="RentOrSale" class="form-control">
+                                            <option value="">-- Select --</option>
+                                            <option value="1">Sale</option>
+                                            <option value="2">Rent</option>
+                                        </select>
+                                        <span asp-validation-for="RentOrSale" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12 d-inline-flex justify-content-end">
+                                <a asp-action="Index" class="btn btn-success btn-backtolist">Back to List</a>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

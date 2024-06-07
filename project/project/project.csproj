@@ -1,0 +1,84 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\customer\**" />
+    <Content Remove="Areas\customer\**" />
+    <EmbeddedResource Remove="Areas\customer\**" />
+    <None Remove="Areas\customer\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\CarShop.cs" />
+    <Compile Remove="Models\RentCustomer.cs" />
+    <Compile Remove="Models\Repository\dbCarShopRepository.cs" />
+    <Compile Remove="Models\Repository\dbRentCustomerRepository.cs" />
+    <Compile Remove="Models\Repository\dbSaleCustoerRepository.cs" />
+    <Compile Remove="Models\SaleCustoer.cs" />
+    <Compile Remove="ViewModels\CarShopModel.cs" />
+    <Compile Remove="ViewModels\RentCustomerModel.cs" />
+    <Compile Remove="ViewModels\SaleCustomerModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Admin\Views\Rent\Create.cshtml" />
+    <Content Remove="Areas\Admin\Views\Rent\Edit.cshtml" />
+    <Content Remove="Areas\Admin\Views\Sale\Create.cshtml" />
+    <Content Remove="Areas\Admin\Views\Sale\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\AddCar\" />
+    <Folder Include="wwwroot\images\Lastnewsupdate\" />
+    <Folder Include="wwwroot\images\Sale\" />
+    <Folder Include="wwwroot\images\Rent\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\fonts\ElegantIcons.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\assets\js\jquery-ui.min.js" />
+    <None Include="wwwroot\assets\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\assets\js\jquery.nice-select.min.js" />
+    <None Include="wwwroot\assets\js\jquery.slicknav.js" />
+    <None Include="wwwroot\assets\js\main.js" />
+    <None Include="wwwroot\assets\js\mixitup.min.js" />
+    <None Include="wwwroot\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\assets\sass\style.scss" />
+    <None Include="wwwroot\assets\sass\_about.scss" />
+    <None Include="wwwroot\assets\sass\_base.scss" />
+    <None Include="wwwroot\assets\sass\_blog-details.scss" />
+    <None Include="wwwroot\assets\sass\_blog-sidebar.scss" />
+    <None Include="wwwroot\assets\sass\_blog.scss" />
+    <None Include="wwwroot\assets\sass\_breadcrumb.scss" />
+    <None Include="wwwroot\assets\sass\_car-details.scss" />
+    <None Include="wwwroot\assets\sass\_car.scss" />
+    <None Include="wwwroot\assets\sass\_contact.scss" />
+    <None Include="wwwroot\assets\sass\_footer.scss" />
+    <None Include="wwwroot\assets\sass\_header.scss" />
+    <None Include="wwwroot\assets\sass\_hero.scss" />
+    <None Include="wwwroot\assets\sass\_home-page.scss" />
+    <None Include="wwwroot\assets\sass\_mixins.scss" />
+    <None Include="wwwroot\assets\sass\_responsive.scss" />
+    <None Include="wwwroot\assets\sass\_services.scss" />
+    <None Include="wwwroot\assets\sass\_variable.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HVAC Template">
+    <meta name="keywords" content="HVAC, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto Car</title>
+
+    <link rel="icon" type="image/x-icon" href="~/assets/img/logo.png">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul class="header__top__widget">
+                            <li><i class="fa fa-clock-o"></i> Week day: 08:00 am to 18:00 pm</li>
+                        </ul>
+                    </div>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <div class="col-lg-5">
+                            <div class="header__top__right">
+
+                                <div class="header__top__social">
+                                    <a asp-action="Login" asp-controller="Account">
+                                        <i class="fa fa-sign-in"></i>
+                                        <span>
+                                            Login
+                                        </span>
+                                    </a>
+                                    <a asp-action="Register" asp-controller="Account">
+                                        <i class="fa fa-user"></i>
+                                        <span>
+                                            Register
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-lg-5">
+                            <div class="header__top__right">
+                                <div class="header__top__social">
+                                    <a asp-action="Logout" asp-controller="Account">
+                                        <i class="fa fa-sign-in"></i>
+                                        <span>
+                                            Logout
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a asp-action="index" asp-controller="Home"><img src="~/assets/img/logo2.png" style="max-width: 106px;" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="header__nav">
+                        <nav class="header__menu">
+                            <ul>
+                                <li class="active"><a asp-action="index" asp-controller="Home">Home</a></li>
+                                <li>
+                                    <a href="#">Cars</a>
+                                    <ul class="dropdown">
+                                        <li> <a asp-controller="Home" asp-action="Sale" class="site-btn text-white">Sale</a></li>
+                                        <li><a asp-controller="home" asp-action="Rent" class="site-btn text-white">Rent</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="active"><a asp-action="AutoPart" asp-controller="Home">Auto Part</a></li>
+                                <li class="active"><a asp-action="callback" asp-controller="Home">About</a></li>
+                                <li class="active"><a asp-action="Contact" asp-controller="Home">Contact</a></li>
+                            </ul>
+                        </nav>                    
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            <div class="header__nav__widget">
+                                <div class="header__nav__widget__btn">
+                                    <a asp-controller="home" asp-action="addCar" class="site-btn text-white">Add Car</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    @RenderBody()
+    <!-- Footer Section Begin-->
+    <footer class="footer set-bg" data-setbg="../assets/img/footer-bg.jpg">
+        <div class="footer-header">
+            <div class="container ">
+                <div class="row">
+                    <div class="col" style="display: flex; justify-content: center;">
+                        <div>
+                            <a href="#"><img src="~/assets/img/logo.png" style="max-width: 169px; padding-bottom: 10px;" alt=""></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+
+                <table class="table text-center text-white">
+                    <tbody class="fw-normal">
+                        <tr>
+                            <td>Mon - Thu:</td>
+                            <td>8am - 9pm</td>
+                        </tr>
+                        <tr>
+                            <td>Fri - Sat:</td>
+                            <td>8am - 1am</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday:</td>
+                            <td>9am - 10pm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--Grid column-->
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer__contact__title">
+                        <h2>Contact Us Now!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto mr-auto">
+                    <div class="footer__contact__option">
+                        <div class="option__item"><i class="fa fa-phone"></i> 0786057891</div>
+                        <div class="option__item email"><i class="fa fa-envelope-o"></i> yazank153@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+            © 2020 Copyright:
+        </div>
+        </div>
+    </footer>
+    <!-- Footer Section End-->
+    <!-- Js Plugins -->
+    <script src="~/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/assets/js/jquery-ui.min.js"></script>
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/mixitup.min.js"></script>
+    <script src="~/assets/js/jquery.slicknav.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                center: true,
+                item: 2,
+                loop: true,
+                margin: 0,
+
+                responsive: {
+
+
+                    600: {
+                        items: 6
+                    },
+
+                }
+            })
+        });
+    </script>
+</body>
+
+
+</html>

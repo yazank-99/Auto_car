@@ -1,0 +1,291 @@
+﻿@model project.ViewModels.HomeModel
+<!-- Hero Section Begin -->
+<section class="hero spad set-bg" data-setbg="assets/img/hero-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="hero__text">
+                    <div class="hero__text__title">
+                        <span>FIND YOUR DREAM CAR</span>
+                        <h2>Porsche Cayenne S</h2>
+                    </div>
+                    <div class="hero__text__title">
+                        <h2>Model 2019</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- Services Section Begin -->
+<section class="services spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Our Services</span>
+                    <h2>What We Offers</h2>
+                    <p>Our employee's commitment is what makes us successful – and we are committed to you in return!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src="assets/img/services/services-1.png" alt="">
+                    <h5>Rental A Cars</h5>
+                    <p>
+                        Whether it’s an SUV for a family road trip, a pickup truck for some errands,
+                        or a classic sports car for a special night out, find the perfect car for all kinds of occasions and budgets on Outocar.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src="assets/img/services/services-2.png" alt="">
+                    <h5>Buying A Cars</h5>
+                    <p>
+                        Buying a new car has never been easier. You will buy your car directly from any brand you want, as we act as an agent for these brands.
+                        This means you can rest easy knowing you're getting the best price, no matter where you're buying from.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src="assets/img/services/services-3.png" alt="">
+                    <h5>Car Maintenance</h5>
+                    <p>
+                        Our mission is to leverage technology to service any vehicle, anywhere, anytime when needed and reduce your total cost. We attract the best ASE certified technicians.
+                        Above all, we value our customers' happiness and satisfaction
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src="assets/img/services/services-4.png" alt="">
+                    <h5>Support 24/7</h5>
+                    <p>
+                        Feel safe wherever you are. Even when you’re not in your car. Autocar Advisors are ready to help you — day or night, in your car, on your motorcycle, We’re there for emergencies,
+                        directions and more, and we’ve got a wide range of plans to fit your needs and your budget.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+<!-- Feature Section Begin -->
+<section class="feature spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="feature__text">
+                    <div class="section-title">
+                        <span>Our Feature</span>
+                        <h2>We Are a Trusted Name In Auto</h2>
+                    </div>
+                    <div class="feature__text__desc">
+                        <p>Our expertise in the automotive field runs deep; Autocar's roots can be traced back to the early days of automobile advertising.</p>
+                        <p>Today we work with many auto brands and dealerships across all three levels of the industrial ecosystem to help navigate the intricacies of the market.</p>
+                    </div>
+                    <div class="feature__text__btn">
+                        <a asp-action="about" asp-controller="home" class="primary-btn">About Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src="assets/img/feature/feature-1.png" alt="">
+                            </div>
+                            <h6>Engine</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src="assets/img/feature/feature-2.png" alt="">
+                            </div>
+                            <h6>Turbo</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src="assets/img/feature/feature-3.png" alt="">
+                            </div>
+                            <h6>Colling</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src="assets/img/feature/feature-4.png" alt="">
+                            </div>
+                            <h6>Suspension</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src="assets/img/feature/feature-5.png" alt="">
+                            </div>
+                            <h6>Electrical</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src="assets/img/feature/feature-6.png" alt="">
+                            </div>
+                            <h6>Brakes</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Feature Section End -->
+<!-- Car Section Begin -->
+@if (Model.MostCarResearch.Count() > 0)
+{
+    <section class="car spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Our Car</span>
+                        <h2>Best Vehicle Offers</h2>
+                    </div>
+                    <ul class="filter__controls">
+                        <li class="active" data-filter="*">Most Researched</li>
+                        <li data-filter=".sale">Latest on sale</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row car-filter">
+                @foreach (var item in Model.MostCarResearch)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix @(item.RentOrSale==1?"sale":"")">
+                        <div class="car__item">
+                            <div class="car__item__pic__slider owl-carousel">
+                                <img src="~/images/addcar/@item.CarImgUrl1" />
+                                <img src="~/images/addcar/@item.CarImgUrl2" />
+                                <img src="~/images/addcar/@item.CarImgUrl3" />
+                            </div>
+                            <div class="car__item__text">
+                                <div class="car__item__text__inner">
+                                    <div class="label-date">@item.CarManufacturingyear</div>
+                                    <h5><a href="#">@item.CarBrand @item.CarTypeModel</a></h5>
+                                    <ul>
+                                        <li><span>@item.CarWalking</span> mi</li>
+                                        <li>@item.CarGear</li>
+                                    </ul>
+                                </div>
+                                <div class="car__item__price">
+                                    @if(item.RentOrSale == 1)
+                                    {
+                                        <a href="/home/sale/@item.CarId"><span class="car-option @(item.RentOrSale==1?"sale":"")">For @(item.RentOrSale == 1 ? "Sale" : "Rent")</span></a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/home/rent/@item.CarId"><span class="car-option @(item.RentOrSale==1?"sale":"")">For @(item.RentOrSale == 1 ? "Sale" : "Rent")</span></a>
+                                    }
+                                    <h6>
+                                        $@item.CarPrice@if (item.RentOrSale == 2)
+                                        {
+                                            <span>/Month</span>
+                                        }
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+<!-- Car Section End -->
+<!-- Brand Section Begin-->
+<div class="owl-carousel">
+    <div> <img style="max-width: 100px;" src="assets/img/brands/audi.png"></div>
+    <div> <img style="max-width: 70px;" src="assets/img/brands/borsche.jpg"></div>
+    <div> <img style="max-width: 100px;" src="assets/img/brands/download.jpg"></div>
+    <div> <img style="max-width: 70px;" src="assets/img/brands/ferrari.png"> </div>
+    <div><img style="max-width: 100px;" src="assets/img/brands/kia.png"> </div>
+    <div><img style="max-width: 100px;" src="assets/img/brands/Hundai.png"> </div>
+    <div> <img style="max-width: 70px;" src="assets/img/brands/marcedes.jpg"> </div>
+    <div> <img style="max-width: 70px;" src="assets/img/brands/tesla.png"> </div>
+</div>
+<!-- Brand Section End-->
+<!-- Latest Blog Section Begin -->
+@if (Model.lastNew.Count() > 0)
+{
+    <section class="latest spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Our Blog</span>
+                        <h2>Latest News Updates</h2>
+                        <p>
+                            Sign up for the latest Automobile Industry information and more. Duis aute<br /> irure
+                            dolorin reprehenderits volupta velit dolore fugiat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.lastNew)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="latest__blog__item">
+                            <div class="latest__blog__item__pic set-bg" data-setbg="images/Lastnewsupdate/@item.LastnewsupdateImgeUrl">
+                                <ul>
+                                    <li>@item.LastnewsupdateName</li>
+                                    <li>@item.LastnewsupdateDate</li>
+                                </ul>
+                            </div>
+                            <div class="latest__blog__item__text">
+                                <h5>@item.LastnewsupdateTitle</h5>
+                                <p>
+                                    @item.LastnewsupdateDesc
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<!-- Latest Blog Section End -->
+
+<div class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="cta__item set-bg" data-setbg="../assets/img/cta/cta-1.jpg">
+                    <h4>Do You Want To Buy A Car</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="cta__item set-bg" data-setbg="../assets/img/cta/cta-2.jpg">
+                    <h4>Do You Want To Rent A Car</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
